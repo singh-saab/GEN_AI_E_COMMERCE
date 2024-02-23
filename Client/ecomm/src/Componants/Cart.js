@@ -1,6 +1,6 @@
 // Cart.js
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const CartContainer = styled.div`
   border: 1px solid #ccc;
@@ -9,9 +9,10 @@ const CartContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-const CartTitle = styled.h2`
-  font-size: 20px;
+const CartTitle = styled.h1`
+  font-size: 30px;
   margin-bottom: 10px;
+  text-align:center;
 `;
 
 const CartItem = styled.div`
@@ -24,6 +25,18 @@ const Cart = ({ items }) => {
       <CartTitle>Shopping Cart</CartTitle>
       {items.map((item, index) => (
         <CartItem key={index}>
+          <span>
+            <img
+              src={item.image}
+              alt={item.title}
+              style={{
+                height: "100px",
+                width: "100px",
+                padding: "5px",
+                marginRight: "50px",
+              }}
+            />
+          </span>
           <strong>{item.title}</strong> - ${item.price}
         </CartItem>
       ))}

@@ -1,5 +1,6 @@
 // Header.js
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const HeaderContainer = styled.header`
@@ -20,7 +21,7 @@ const Navigation = styled.nav`
   justify-content: space-between;
 `
 
-const MenuItem = styled.a`
+const MenuItem = styled(Link)`
   color: #fff;
   text-decoration: none;
   margin-left: 20px;
@@ -37,12 +38,13 @@ const Header = () => {
       </MenuItem>
       <div style={{ marginLeft: 'auto' }}>
         <Navigation>
-          <MenuItem href='/'>Home</MenuItem>
-          <MenuItem href='/Products'>Products</MenuItem>
-          <MenuItem href='#'>Contact</MenuItem>
-          <MenuItem href='/Register'>Register</MenuItem>
-          <MenuItem href='/Login'>Login</MenuItem>
-          <MenuItem href='/cart'>Cart</MenuItem>
+          <MenuItem to="/">Home</MenuItem>
+          <MenuItem to="/products">Products</MenuItem>
+          <MenuItem to="/contact">Contact</MenuItem>
+          <MenuItem to="register">Register</MenuItem>
+          <MenuItem to="/login">Login</MenuItem>
+          <MenuItem to="/cart">Cart</MenuItem>
+
         </Navigation>
       </div>
     </HeaderContainer>
